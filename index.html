@@ -240,7 +240,7 @@
         let votingMessage = voteage >= 18
             ? "You can vote!"
             : `Wait ${18 - voteage} more years`;
-
+        alert(votingMessage)
         output.innerHTML += `
             <div class="result">
                 Age: ${voteage} <br>
