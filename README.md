@@ -1,0 +1,1 @@
+# Smit-javascript-Destructuring-SpreadOperator-TernaryOperator
