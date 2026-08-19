@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        .container {
+            width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .result {
+            background-color: #f5f5f5;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>JavaScript Practice</h1>
+
+        <div id="output"></div>
+
+    </div>
+
+    <script>
+
+        let output = document.getElementById("output");
+
+
+        let student = {
+
+            name: "Ayesha",
+            rollNo: 12,
+            marks: 85,
+            city: "Lahore"
+
+        };
+
+        let {name, marks} = student;
+
+        output.innerHTML += `
+            <div class="result">
+                Name: ${name} <br>
+                Marks: ${marks}
+            </div>
+        `;
+
+
+        let product = {
+
+            id: 5,
+            title: "Wireless Mouse",
+            price: 25.99
+
+        };
+
+        let {title: productName} = product;
+
+        output.innerHTML += `
+            <div class="result">
+                Product Name: ${productName}
+            </div>
+        `;
+
+
+        let user = {
+
+            username: "bilal99"
+
+        };
+
+        let {username, age = 18} = user;
+
+        output.innerHTML += `
+            <div class="result">
+                Username: ${username} <br>
+                Age: ${age}
+            </div>
+        `;
+
+
+        let colors = ["red", "green", "blue"];
+
+        let [a,b,c] = colors;
+
+        output.innerHTML += `
+            <div class="result">
+                Colors: ${b}, ${a}, ${c}
+            </div>
+        `;
+
+
+        let numbers = [10, 20, 30, 40];
+
+        let [w,x,y,z] = numbers;
+
+        output.innerHTML += `
+            <div class="result">
+                Numbers: ${w}, ${y}
+            </div>
+        `;
+
+
+        let personalInfo = { name: "Zara", age: 22 };
+
+        let jobInfo = { company: "TechCorp", salary: 50000 };
+
+        let employee = {personalInfo, ...jobInfo};
+
+        output.innerHTML += `
+            <div class="result">
+                Name: ${employee.personalInfo.name} <br>
+                Age: ${employee.personalInfo.age} <br>
+                Company: ${employee.company} <br>
+                Salary: ${employee.salary}
+            </div>
+        `;
+
+
+        let defaultSettings = {
+            theme: "light",
+            fontSize: 14,
+            notifications: true
+        };
+
+        let userSettings = {
+            ...defaultSettings,
+            theme: "dark"
+        };
+
+        output.innerHTML += `
+            <div class="result">
+                Theme: ${userSettings.theme} <br>
+                Font Size: ${userSettings.fontSize} <br>
+                Notifications: ${userSettings.notifications}
+            </div>
+        `;
+
+
+        let fruits = ["mango", "banana"];
+
+        let vegetables = ["potato", "onion"];
+
+        let groceryList = [...fruits, ...vegetables];
+
+        output.innerHTML += `
+            <div class="result">
+                Grocery List: ${groceryList.join(", ")}
+            </div>
+        `;
+
+
+        let cart = ["shirt", "shoes"];
+
+        let updatedCart = [...cart, "jacket"];
+
+        output.innerHTML += `
+            <div class="result">
+                Updated Cart: ${updatedCart.join(", ")}
+            </div>
+        `;
+
+
+        let marksObtained = 45;
+
+        let result = marksObtained >= 50 ? "Pass" : "Fail";
+
+        output.innerHTML += `
+            <div class="result">
+                Marks: ${marksObtained} <br>
+                Result: ${result}
+            </div>
+        `;
+
+
+        let num = 7;
+
+        let numberResult = num % 2 == 0 ? "Even" : "Odd";
+
+        output.innerHTML += `
+            <div class="result">
+                Number: ${num} <br>
+                Result: ${numberResult}
+            </div>
+        `;
+
+
+        let score = 72;
+
+        let grade = score >= 90
+            ? "A"
+            : score >= 75
+            ? "B"
+            : score >= 60
+            ? "C"
+            : "F";
+
+        output.innerHTML += `
+            <div class="result">
+                Score: ${score} <br>
+                Grade: ${grade}
+            </div>
+        `;
+
+
+        let isLoggedIn = false;
+
+        let loginStatus = isLoggedIn ? "Logout" : "Login";
+
+        output.innerHTML += `
+            <div class="result">
+                Login Status: ${loginStatus}
+            </div>
+        `;
+
+
+        let voteage = 16;
+
+        let votingMessage = voteage >= 18
+            ? "You can vote!"
+            : `Wait ${18 - voteage} more years`;
+
+        output.innerHTML += `
+            <div class="result">
+                Age: ${voteage} <br>
+                ${votingMessage}
+            </div>
+        `;
+
+    </script>
+
+</body>
+</html>
